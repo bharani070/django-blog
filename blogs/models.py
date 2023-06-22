@@ -16,7 +16,7 @@ class Category(models.Model):
 
 STATUS_CHOICES = (
     ("Draft", "Draft"),
-    ("Publish", "Publish")
+    ("Published", "Published")
 )
 
 class Blog(models.Model):
