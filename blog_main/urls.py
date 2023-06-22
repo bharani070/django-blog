@@ -38,4 +38,8 @@ urlpatterns = [
 
     # signOut
     path('singout/', views.singout, name='signout'),
+
+    # dashboard
+    path('dashboard/', include('dashboards.urls')),
+
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
