@@ -48,7 +48,7 @@
                     <div class="form-group">
                         <form action="" method='POST'>
                             {% csrf_token %}
-                            <textarea name="comment" class="form-control mb-2" placeholder="Write your comment" style="resize:vertical;"></textarea>
+                            <textarea name="comment" required class="form-control mb-2" placeholder="Write your comment" style="resize:vertical;"></textarea>
                             <input type="submit" class="btn btn-warning" value="Submit">
                         </form>
                     </div>
@@ -84,7 +84,7 @@
                         <div class="col-sm-6">
                             <ol class="list-unstyled mb-1"
                                 {% for lnk in links %}
-                                <li><a href="{{ lnk.platform_link }}" target="_blank">{{ lnk.platform }}</a></li>
+                                     <li><a href="{{ lnk.platform_link }}" target="_blank">{{ lnk.platform }}</a></li>
                                 {% endfor %}
                             </ol>
                         </div>

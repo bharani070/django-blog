@@ -24,7 +24,7 @@ def registration(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('registration')
+            return redirect('signin')
         else:
             print(form.errors)
     else:
@@ -44,7 +44,7 @@ def signin(request):
             user = auth.authenticate(username=username, password=password)
             if user is not None:
                 auth.login(request, user)
-            return redirect('dashboard')
+            return redirect('home')
 
     form = AuthenticationForm()
     context = {
