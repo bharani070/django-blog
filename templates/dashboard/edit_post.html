@@ -9,8 +9,9 @@
 
     <!-- Right side content -->
     <div class="col-md-9">
-        <p><h2>Edit Category</h2></p>
-        <form action="{% url 'edit_category' category.id %}" method="POST" style="width: 200px;">
+        <p><h2>Edit Post</h2></p>
+
+        <form action="{% url 'edit_post' post.id %}" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form | crispy}}
             <button type="submit" class="btn btn-warning" style="float: inline-end;">Submit</button>
