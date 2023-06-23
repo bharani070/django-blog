@@ -4,8 +4,10 @@
         {% if perms.auth.view_user %}
         <a href="{% url 'users' %}" class="nav-link text-dark {% if '/users/' in request.path %} bg-warning {% endif %}">Users</a>
         {% endif %}
+        {% if perms.view_category %}
         <a href="{% url 'categories' %}" class="nav-link text-dark {% if '/categories/' in request.path %} bg-warning {% endif %}">Categories</a>
+        {% endif %}
         <a href="{% url 'posts' %}" class="nav-link text-dark {% if '/posts/' in request.path %} bg-warning {% endif %}">Posts</a>
-        <a href="" class="nav-link text-dark {% if '/signout/' in required.path %} bg-warning {% endif %}">Signout</a>
+        <a href="{% url 'signout' %}" class="nav-link text-dark {% if '/signout/' in required.path %} bg-warning {% endif %}">Signout</a>
     </div>
 </div>
