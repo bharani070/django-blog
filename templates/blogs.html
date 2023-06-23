@@ -23,7 +23,7 @@
                 <section class="mb-5">
                     <p class="fs-5 mb-4">{{ single_blog.short_discription }}</p>
                     <p class="fs-5 mb-4">{{ single_blog.blog_body }}</p>    
-                    {% if perms.view_comment %}
+                    
                     <!-- comments -->
                     <h4>Comments ({{ comment_count }})</h4>
                     {% if comments %}
@@ -43,6 +43,7 @@
                     {% else %}
                     No comments yet.
                     {% endif %}
+                    {% if user.is_authenticated %}
                     <br>
                     <div class="form-group">
                         <form action="" method='POST'>
@@ -51,6 +52,8 @@
                             <input type="submit" class="btn btn-warning" value="Submit">
                         </form>
                     </div>
+                    {% else %}
+                    <p>Pleae <span><a href="{% url 'signin' %}">signin</a></span> to write a comment!</p>
                     {% endif %}
                 </section>
             </article>
