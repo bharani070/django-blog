@@ -1,5 +1,5 @@
 asgiref==3.7.2
-crispy-bootstrap4==2022.1;python <"3.9";
+crispy-bootstrap4==2022.1
 Django==4.2.2
 django-crispy-forms==2.0
 Pillow==9.5.0
