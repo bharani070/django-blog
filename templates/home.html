@@ -63,7 +63,11 @@
           <h4 class="font-italic">Follow Us</h4>
           <ol class="list-unstyled">
             {% for lnk in links %}
-            <li><a href="{{ lnk.platform_link }}" target="_blank">{{ lnk.platform }}</a></li>
+            {% if 'FaceBook' in lnk.platform %}
+              <li><i class="fa fa-facebook-square"></i>&nbsp;&nbsp;<a href="{{ lnk.platform_link }}" target="_blank">{{ lnk.platform }}</a></li>
+            {% else %}
+              <li><a href="{{ lnk.platform_link }}" target="_blank">{{ lnk.platform }}</a></li>
+            {% endif %}
             {% endfor %}
           </ol>
         </div>
